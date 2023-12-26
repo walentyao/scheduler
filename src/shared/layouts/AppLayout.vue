@@ -1,8 +1,15 @@
 <script setup lang="ts"></script>
 
 <template>
-  <RouterView />
-  <RouterView name="navigation" />
+  <div class="app-layout">
+    <RouterView />
+    <RouterView name="navigation" />
+  </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style lang="scss">
+.app-layout {
+  --height-footer: 70px;
+  position: relative;
+}
+</style>

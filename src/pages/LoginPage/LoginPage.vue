@@ -1,91 +1,98 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CustomButton from '@/shared/components/CustomButton.vue';
+</script>
 
 <template>
-  <div class="login">
-    <div class="titleApp">
-      <h1 class="titleApp__name">SCHEDULER</h1>
-      <h3 class="titleApp__desc">Management App</h3>
-    </div>
-
-    <form class="form login__form">
-      <h4 class="form__title">Войдите в свой аккаунт</h4>
-      <div class="inputPrimary">
-        <label
-          for="email"
-          class="inputPrimary__image"
-        >
-          <img
-            src="/convert.svg"
-            alt="convert"
-          />
-        </label>
-        <input
-          type="email"
-          id="email"
-          placeholder="Почта"
-          class="inputPrimary__input"
-        />
+  <div class="page">
+    <div class="login">
+      <div class="titleApp">
+        <h1 class="titleApp__name">SCHEDULER</h1>
+        <h3 class="titleApp__desc">Management App</h3>
       </div>
-      <div class="form__wrapper">
+
+      <form class="form login__form">
+        <h4 class="form__title">Войдите в свой аккаунт</h4>
         <div class="inputPrimary">
           <label
-            for="password"
+            for="email"
             class="inputPrimary__image"
           >
             <img
-              src="/lock.svg"
+              src="/convert.svg"
               alt="convert"
             />
           </label>
           <input
-            type="password"
-            id="password"
-            placeholder="Пароль"
+            type="email"
+            id="email"
+            placeholder="Почта"
             class="inputPrimary__input"
           />
         </div>
+        <div class="form__wrapper">
+          <div class="inputPrimary">
+            <label
+              for="password"
+              class="inputPrimary__image"
+            >
+              <img
+                src="/lock.svg"
+                alt="convert"
+              />
+            </label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Пароль"
+              class="inputPrimary__input"
+            />
+          </div>
+          <a
+            href="#app"
+            class="form__forgot"
+            >Забыли пароль?</a
+          >
+        </div>
+        <CustomButton
+          type="primary"
+          label="Войти"
+        />
+      </form>
+
+      <div class="alternative login__alternative">
+        <div class="alternative__title">Или войдите с помощью</div>
+        <div class="auth-links">
+          <div class="auth-links__link">
+            <img
+              src="/google.svg"
+              alt="1"
+              class="auth-links__icon"
+            />
+          </div>
+          <div class="auth-links__link">
+            <img
+              src="/twitter.svg"
+              alt="2"
+              class="auth-links__icon"
+            />
+          </div>
+          <div class="auth-links__link">
+            <img
+              src="/facebook.svg"
+              alt="3"
+              class="auth-links__icon"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="referencesRegister login__referencesRegister">
+        Ещё нет аккаунта?
         <a
           href="#app"
-          class="form__forgot"
-          >Забыли пароль?</a
+          class="referencesRegister__link"
+          >Зарегистрироваться</a
         >
       </div>
-      <button class="btn btn__primary">Войти</button>
-    </form>
-
-    <div class="alternative login__alternative">
-      <div class="alternative__title">Или войдите с помощью</div>
-      <div class="auth-links">
-        <div class="auth-links__link">
-          <img
-            src="/google.svg"
-            alt="1"
-            class="auth-links__icon"
-          />
-        </div>
-        <div class="auth-links__link">
-          <img
-            src="/twitter.svg"
-            alt="2"
-            class="auth-links__icon"
-          />
-        </div>
-        <div class="auth-links__link">
-          <img
-            src="/facebook.svg"
-            alt="3"
-            class="auth-links__icon"
-          />
-        </div>
-      </div>
-    </div>
-    <div class="referencesRegister login__referencesRegister">
-      Ещё нет аккаунта?
-      <a
-        href="#app"
-        class="referencesRegister__link"
-        >Зарегистрироваться</a
-      >
     </div>
   </div>
 </template>
@@ -96,6 +103,8 @@
 .login {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  max-width: 375px;
 
   padding: 10px;
 

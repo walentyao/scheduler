@@ -58,22 +58,12 @@
 </template>
 
 <style scoped lang="scss">
-.backspace {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 10px;
-  background: var(--color-blue);
-  width: 36px;
-  height: 36px;
-}
-
 .navigation {
   position: fixed;
   bottom: 0;
   z-index: 1000;
   width: 100%;
+  height: var(--height-footer);
   padding: 20px 40px;
   background: white;
   box-shadow: 0 0 10px 3px rgba(232, 232, 232, 0.8);
