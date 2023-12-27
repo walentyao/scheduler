@@ -2,6 +2,7 @@
 import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
 import { XMarkIcon } from '@heroicons/vue/24/solid';
 import CustomButton from '@/shared/components/CustomButton.vue';
+import ProgressBar from '@/shared/components/ProgressBar.vue';
 </script>
 
 <template>
@@ -65,102 +66,22 @@ import CustomButton from '@/shared/components/CustomButton.vue';
         </div>
       </div>
       <div class="description task-info__description">
-        <h3>Описание</h3>
-        <p>
+        <h3 class="description__title">Описание</h3>
+        <p class="description__content">
           user interface (UI) is anything a user may interact with to use a digital product or
           service. This includes everything from screens and touchscreens, keyboards, sounds, and
           even lights. To understand the evolution of UI, however, it’s helpful to learn a bit more
           about its history and how it has evolved into best practices and a profession.
         </p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim facere harum iusto nihil
-        nobis sed sunt! A accusamus ad architecto at, atque autem cupiditate distinctio ea eaque
-        earum eum eveniet harum iusto magni minus nam neque officia omnis optio perferendis possimus
-        quaerat qui quis quo quos recusandae rerum sed sit soluta suscipit tempore tenetur vel
-        voluptatibus. Alias asperiores autem culpa dolores earum, esse eum fugiat, id illum impedit
-        ipsa iste iure labore laborum natus nisi porro praesentium quidem quos saepe sequi sint
-        totam vero! Dolor error eveniet iure, nihil obcaecati omnis tenetur voluptates? Accusamus
-        adipisci aliquam aliquid animi aut culpa dolores dolorum ea explicabo facere facilis harum
-        id impedit in incidunt iste molestiae nam necessitatibus nihil obcaecati quam quas, quia
-        quidem quod sapiente similique sunt, tempore, tenetur unde veniam. At consequuntur doloribus
-        fugit ipsa labore non numquam quisquam quos sint velit? Alias architecto consequatur debitis
-        eum exercitationem ipsam laboriosam minus, nihil placeat porro qui sint, tenetur.
-        Accusantium adipisci culpa cupiditate debitis doloribus earum esse harum hic in incidunt
-        itaque laudantium, nam nulla odio porro quaerat quam quia quos ratione repellat repudiandae
-        rerum saepe sequi ullam unde vel veniam? Alias animi aperiam atque autem consequuntur
-        corporis, culpa, delectus dicta dolores eius eos esse ex explicabo facilis molestiae
-        nesciunt nihil nobis numquam obcaecati omnis perspiciatis praesentium quaerat quos ratione
-        recusandae reprehenderit sint voluptate. Commodi consequuntur dolorem dolores ea, enim et
-        eveniet hic in nobis ratione rem saepe sed voluptatem. Aliquam animi at atque dolores
-        ducimus eaque earum facilis impedit nam nulla numquam odio officia praesentium quaerat quas
-        quia quidem quod quos sequi sint sunt tempora tempore, ullam vel vero! Accusantium
-        asperiores deserunt, facere ipsam nemo neque nisi officiis quaerat ratione soluta! Ab beatae
-        distinctio dolor dolorem eligendi est hic ipsum molestiae mollitia nihil recusandae sequi
-        tempora ullam unde vel velit, voluptatibus! Beatae cupiditate eum exercitationem. A aliquam
-        amet delectus dignissimos distinctio earum enim labore magnam maxime, natus nihil
-        perferendis porro quia, quo rem sit suscipit veniam vitae voluptas voluptatem! Accusantium
-        alias aut consequatur culpa deleniti dicta eligendi fugit ipsum iure necessitatibus nesciunt
-        nihil non omnis perspiciatis placeat porro, possimus quis sint vel voluptate! Deleniti
-        dolorem eveniet explicabo, facilis illo minima nam sapiente tempora voluptatibus. Accusamus
-        atque autem delectus fugit incidunt inventore ipsum magnam maiores, maxime pariatur
-        perferendis perspiciatis provident quas quo voluptatibus? Ea eius eos iure nemo optio
-        possimus quae quia saepe tenetur totam. Consectetur hic iusto laudantium minus quod
-        recusandae ut voluptas, voluptatum. Aperiam dolorem magnam, molestiae nisi nostrum
-        recusandae repellendus sunt vero! Ad, aliquid aspernatur deserunt dicta dolor dolorem
-        dolorum esse facilis illum necessitatibus nesciunt optio quam quas, quis, quisquam
-        recusandae rem repudiandae temporibus voluptas voluptate! Aperiam aut cum cupiditate,
-        deserunt dolor dolore dolorem doloribus earum eius eligendi facilis inventore ipsam laborum,
-        minus nemo, officia omnis placeat porro quia quo quod rem sint sit sunt ut vel veniam vero.
-        Animi consectetur consequuntur deserunt ducimus eveniet fuga id iste iusto nam neque nihil
-        obcaecati sequi sint temporibus unde ut, voluptas. Amet assumenda autem consequatur enim hic
-        in libero, quis quod! Ab adipisci, animi autem commodi, deleniti dolorum ducimus ea eius
-        expedita fuga illo ipsum itaque iusto laboriosam laborum necessitatibus placeat porro
-        quaerat quas quo repudiandae rerum, saepe similique ut vero! Ad doloremque incidunt magni
-        sunt totam. Alias est et exercitationem necessitatibus quidem rem reprehenderit sapiente
-        sequi suscipit? Ab aliquam aperiam asperiores autem consequatur consequuntur culpa deleniti
-        dicta dolorum earum error est eum id ipsam iste iure iusto libero numquam, optio pariatur
-        perferendis quaerat quisquam sapiente tempora tempore unde vel. Ad culpa distinctio expedita
-        porro possimus quae quo recusandae sunt totam vitae. Cupiditate delectus, dolor dolores
-        earum eius et eum eveniet ex expedita incidunt ipsa laboriosam nostrum placeat rem
-        repudiandae suscipit tempora vero vitae! Aperiam atque deleniti dolorem dolores doloribus
-        dolorum ducimus error est eveniet, excepturi exercitationem hic in iste magnam minus modi
-        molestias neque odio perspiciatis quas quia ratione recusandae saepe sapiente sint sunt
-        tempore vel velit voluptas voluptatem. Beatae cum fugiat iure iusto maiores minima nulla
-        perspiciatis quidem, reiciendis tenetur? Aperiam cum deleniti eos id, nesciunt rem. Ab,
-        minus quidem. Amet aut blanditiis deleniti dignissimos earum ex facilis illum in incidunt
-        iure laboriosam laudantium maxime modi molestias natus optio, quae quam quibusdam quod saepe
-        sunt suscipit veniam. A accusamus adipisci corporis debitis deleniti ea eius et eum
-        exercitationem inventore ipsum iste labore laboriosam maiores molestias mollitia obcaecati
-        odio perferendis quae quaerat quas, quasi quos ratione reiciendis rerum sint tempora tenetur
-        totam unde voluptatibus. Animi cum iste itaque molestiae nesciunt nostrum sequi tempore.
-        Adipisci at, atque commodi culpa dolorum eaque eius eos error eveniet ex facere facilis id
-        libero maxime minus nisi non odio officia possimus quaerat ratione reprehenderit repudiandae
-        suscipit tempora ullam velit veniam voluptatem. Ab aliquid autem corporis cumque
-        dignissimos, dolores ducimus excepturi fugiat hic id illo labore minima nobis odit officiis
-        optio quisquam quo tempora unde ut vel, velit voluptate! Ab doloribus mollitia
-        reprehenderit! Dolores excepturi ipsam itaque quos. Accusamus, aspernatur cum debitis
-        dolores eaque labore laudantium maiores modi nam natus necessitatibus obcaecati quas quasi
-        quibusdam quidem quo, rerum sint velit vitae voluptates? Asperiores et explicabo facere non,
-        sunt vel vero voluptas voluptate! Ad amet debitis dolorum excepturi, minus veniam! Deserunt
-        distinctio ex illo ipsam nemo similique veniam voluptatum. Accusamus alias amet architecto
-        aspernatur assumenda atque beatae culpa, cum dignissimos dolore dolorum error eum facilis
-        fuga illo in ipsa iure minus modi mollitia nemo nobis odio officia officiis optio quibusdam
-        quidem, repellendus repudiandae soluta tempore unde veritatis voluptas voluptatum! Aperiam
-        architecto autem consequuntur culpa doloribus earum id, iste nesciunt obcaecati, odio qui
-        saepe tempora vero voluptate voluptatem. Alias aperiam dicta illum iusto obcaecati officia
-        pariatur praesentium quae sit ullam. Amet consequuntur, doloribus exercitationem hic libero
-        nemo quas ratione similique veritatis voluptatibus! At commodi culpa deserunt magnam nobis
-        odio odit officiis quam. Dignissimos, molestias mollitia nulla possimus quos unde. Debitis
-        dignissimos dolore excepturi fugiat itaque libero, molestiae neque nesciunt nulla possimus
-        quasi sed suscipit tempora ullam voluptatem voluptates voluptatum. A beatae blanditiis
-        consectetur deleniti deserunt dolore eum impedit inventore magni minima nam natus nisi
-        perspiciatis, provident repellat vel voluptatibus!
       </div>
     </div>
     <div class="progress">
-      <div class="progress-bar">
-        <div class="progress-bar__line"></div>
-      </div>
-      <div class="progress__value">80%</div>
+      <div>Прогресс</div>
+      <!--      TODO PROGRESS BAR-->
+      <ProgressBar
+        :style-progress="{ backColor: '#A9A2A2', lineColor: '#006EE9' }"
+        :percentages="70"
+      />
     </div>
     <div class="todo-list__wrapper">
       <h3>Список подзадач</h3>
@@ -193,35 +114,6 @@ import CustomButton from '@/shared/components/CustomButton.vue';
   row-gap: 30px;
 
   max-width: 375px;
-}
-
-.progress {
-  display: flex;
-  flex-direction: column;
-  row-gap: 3px;
-  font-size: 12px;
-
-  &__title {
-    color: white;
-  }
-
-  &__value {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-.progress-bar {
-  height: 4px;
-  border-radius: 4px;
-  background: #004797;
-
-  &__line {
-    height: 4px;
-    border-radius: 4px;
-    width: 80%;
-    background: white;
-  }
 }
 
 .header {
@@ -281,5 +173,26 @@ import CustomButton from '@/shared/components/CustomButton.vue';
     font-size: 28px;
     font-weight: 700;
   }
+}
+
+.description {
+  color: var(--color-grey-text);
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  &__content {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+.progress {
+  display: flex;
+  flex-direction: column;
+
+  color: var(--color-grey-text);
 }
 </style>
