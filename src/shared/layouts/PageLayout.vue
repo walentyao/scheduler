@@ -9,7 +9,6 @@
 <style scoped lang="scss">
 .page-layout {
   width: 100%;
-  padding: 10px;
   position: relative;
 
   display: flex;

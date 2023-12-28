@@ -5,6 +5,7 @@ import PageLayout from '@/shared/layouts/PageLayout.vue';
 import LoginPage from '@/pages/LoginPage/LoginPage.vue';
 import RegisterPage from '@/pages/RegisterPage/RegisterPage.vue';
 import DetailTaskPage from '@/pages/DetailTaskPage/DetailTaskPage.vue';
+import AddTaskPage from '@/pages/AddTaskPage/AddTaskPage.vue';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +27,11 @@ const router = createRouter({
           path: '/detail',
           name: 'detail',
           component: DetailTaskPage,
+        },
+        {
+          path: '/add-task',
+          name: 'addTask',
+          component: AddTaskPage,
         },
       ],
     },

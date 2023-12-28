@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
 import { XMarkIcon } from '@heroicons/vue/24/solid';
 import CustomButton from '@/shared/components/CustomButton.vue';
 import ProgressBar from '@/shared/components/ProgressBar.vue';
@@ -80,7 +79,7 @@ import CustomList from '@/shared/components/CustomList.vue';
       <div>Прогресс</div>
       <!--      TODO PROGRESS BAR-->
       <ProgressBar
-        :style-progress="{ backColor: '#A9A2A2', lineColor: '#006EE9' }"
+        :style-progress="{ backColor: '#c5c5c5', lineColor: '#006EE9' }"
         :percentages="70"
       />
     </div>
@@ -96,6 +95,7 @@ import CustomList from '@/shared/components/CustomList.vue';
   display: flex;
   flex-direction: column;
   row-gap: 30px;
+  padding: 10px;
 
   max-width: 375px;
 }
