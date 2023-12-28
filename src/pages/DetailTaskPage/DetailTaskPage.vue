@@ -3,6 +3,7 @@ import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
 import { XMarkIcon } from '@heroicons/vue/24/solid';
 import CustomButton from '@/shared/components/CustomButton.vue';
 import ProgressBar from '@/shared/components/ProgressBar.vue';
+import CustomList from '@/shared/components/CustomList.vue';
 </script>
 
 <template>
@@ -83,26 +84,9 @@ import ProgressBar from '@/shared/components/ProgressBar.vue';
         :percentages="70"
       />
     </div>
-    <div class="todo-list__wrapper">
-      <h3>Список подзадач</h3>
-      <div class="todo-list">
-        <div class="list-item">
-          <div class="list-item__title">Work Out</div>
-          <CheckboxSwitch id="saadsd" />
-        </div>
-        <div class="list-item">
-          <div class="list-item__title">Daily Meeting</div>
-          <CheckboxSwitch id="saasddsd" />
-        </div>
-        <div class="list-item">
-          <div class="list-item__title">Reading a Book</div>
-          <CheckboxSwitch id="saddsd" />
-        </div>
-        <div class="list-item">
-          <div class="list-item__title">Daily Meeting</div>
-          <CheckboxSwitch id="saaasd" />
-        </div>
-      </div>
+    <div class="todo-list">
+      <h3 class="todo-list__title">Список подзадач</h3>
+      <CustomList />
     </div>
   </div>
 </template>
@@ -194,5 +178,13 @@ import ProgressBar from '@/shared/components/ProgressBar.vue';
   flex-direction: column;
 
   color: var(--color-grey-text);
+}
+
+.todo-list {
+  &__title {
+    color: var(--color-grey-text);
+    font-weight: 600;
+    font-size: 16px;
+  }
 }
 </style>

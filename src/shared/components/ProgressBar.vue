@@ -22,7 +22,7 @@ const props = defineProps<IProps>();
     }"
   >
     <div class="progress-bar__line"></div>
-    <div class="progress-bar__percentages">{{ percentages }}%</div>
+    <span class="progress-bar__percentages">{{ percentages }}%</span>
   </div>
 </template>
 
@@ -31,6 +31,7 @@ const props = defineProps<IProps>();
   --color-back: var(--color-blue);
   --color-line: white;
   --percentages-line: 80%;
+  --color-percentages: white;
 
   background: var(--color-back);
   height: 20px;
@@ -48,7 +49,12 @@ const props = defineProps<IProps>();
   &__percentages {
     position: absolute;
     top: 0;
-    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-percentages);
+    width: 100%;
+    z-index: 100;
   }
 }
 </style>
