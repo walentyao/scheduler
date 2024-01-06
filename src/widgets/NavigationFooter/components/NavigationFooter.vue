@@ -59,10 +59,6 @@
 
 <style scoped lang="scss">
 .navigation {
-  position: fixed;
-  bottom: 0;
-  z-index: 1000;
-  width: 100%;
   height: var(--height-footer);
   padding: 20px 40px;
   background: white;

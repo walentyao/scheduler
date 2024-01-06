@@ -93,6 +93,7 @@ import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
   flex-direction: column;
   row-gap: 30px;
 
+  padding: 10px;
   max-width: 375px;
   width: 100%;
 }

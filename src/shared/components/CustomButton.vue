@@ -2,21 +2,28 @@
 import { type Component } from 'vue';
 
 type TypeButton = 'primary' | 'icon';
+
 interface IProps {
   label?: string;
   icon?: Component;
   type: TypeButton;
+  theme?: string;
 }
 
 const props = defineProps<IProps>();
 
-const style = 'btn__' + props.type;
+const getStyle = (): string => {
+  let style = 'btn__' + props.type;
+  if (props.type === 'icon' && props.theme) style += ' btn__icon_' + props.theme;
+
+  return style;
+};
 </script>
 
 <template>
   <button
     class="btn"
-    :class="style"
+    :class="getStyle()"
   >
     <component
       v-if="icon"
@@ -29,6 +36,10 @@ const style = 'btn__' + props.type;
 
 <style scoped lang="scss">
 .btn {
+  --color-btn-back: var(--color-blue);
+  --color-btn-icon: white;
+  --color-btn-text: white;
+
   padding: 10px;
   border-radius: 10px;
   border: none;
@@ -44,8 +55,8 @@ const style = 'btn__' + props.type;
   transition: all 0.2s ease;
 
   &__primary {
-    background: var(--color-blue);
-    color: white;
+    background: var(--color-btn-back);
+    color: var(--color-btn-text);
 
     &:hover {
       background: rgba(126, 14, 218, 0.7);
@@ -55,13 +66,18 @@ const style = 'btn__' + props.type;
   &__icon {
     max-width: max-content;
     height: auto;
-    background: var(--color-blue);
+    background: var(--color-btn-back);
+
+    &_reverse {
+      --color-btn-back: white;
+      --color-btn-icon: var(--color-blue);
+    }
   }
 }
 
 .icon {
   width: 24px;
   height: 24px;
-  color: white;
+  color: var(--color-btn-icon);
 }
 </style>
