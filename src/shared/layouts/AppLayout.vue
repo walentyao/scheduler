@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
+import NavigationFooter from '@/widgets/NavigationFooter/components/NavigationFooter.vue';
 
 const route = useRoute();
 </script>
@@ -18,7 +19,7 @@ const route = useRoute();
         class="app-layout__navigation"
         v-if="route.meta.navigation"
       >
-        <RouterView name="navigation" />
+        <NavigationFooter />
       </div>
     </Transition>
   </div>

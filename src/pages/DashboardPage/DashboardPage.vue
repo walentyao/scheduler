@@ -94,8 +94,8 @@ import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
   row-gap: 30px;
 
   padding: 10px;
+  margin: 0 auto;
   max-width: 375px;
-  width: 100%;
 }
 
 .header {
