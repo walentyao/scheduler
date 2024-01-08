@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+</script>
 
 <template>
   <div class="app-layout">
@@ -9,9 +13,14 @@
         </Transition>
       </RouterView>
     </div>
-    <div class="app-layout__navigation">
-      <RouterView name="navigation" />
-    </div>
+    <Transition name="slide-fade-nav">
+      <div
+        class="app-layout__navigation"
+        v-if="route.meta.navigation"
+      >
+        <RouterView name="navigation" />
+      </div>
+    </Transition>
   </div>
 </template>
 
@@ -38,16 +47,30 @@
 }
 
 .slide-fade-enter-active {
-  transition: all 0.3s ease-out;
+  transition: all 0.3s ease-in;
 }
 
 .slide-fade-leave-active {
-  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+  transition: all 0.3s ease-out;
 }
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
   transform: translateX(20px);
+  opacity: 0;
+}
+
+.slide-fade-nav-enter-active {
+  transition: all 0.3s ease-in;
+}
+
+.slide-fade-nav-leave-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-nav-enter-from,
+.slide-fade-nav-leave-to {
+  transform: translateY(20px);
   opacity: 0;
 }
 </style>

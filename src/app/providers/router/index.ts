@@ -24,6 +24,9 @@ const router = createRouter({
           path: '/',
           name: 'dashboard',
           component: DashboardPage,
+          meta: {
+            navigation: true,
+          },
         },
         {
           path: '/detail',
