@@ -1,94 +1,22 @@
 <script setup lang="ts">
-import CustomButton from '@/shared/components/CustomButton.vue';
+import { LoginForm } from '@/widgets/LoginForm';
+import { AlternativeAuth } from '@/features/AlternativeAuth';
 </script>
 
 <template>
   <div class="page">
     <div class="login">
-      <div class="titleApp">
-        <h1 class="titleApp__name">SCHEDULER</h1>
-        <h3 class="titleApp__desc">Management App</h3>
+      <div class="title-app">
+        <h1 class="title-app__name">SCHEDULER</h1>
+        <h3 class="title-app__desc">Management App</h3>
       </div>
 
-      <form class="form login__form">
-        <h4 class="form__title">Войдите в свой аккаунт</h4>
-        <div class="inputPrimary">
-          <label
-            for="email"
-            class="inputPrimary__image"
-          >
-            <img
-              src="/convert.svg"
-              alt="convert"
-            />
-          </label>
-          <input
-            type="email"
-            id="email"
-            placeholder="Почта"
-            class="inputPrimary__input"
-          />
-        </div>
-        <div class="form__wrapper">
-          <div class="inputPrimary">
-            <label
-              for="password"
-              class="inputPrimary__image"
-            >
-              <img
-                src="/lock.svg"
-                alt="convert"
-              />
-            </label>
-            <input
-              type="password"
-              id="password"
-              placeholder="Пароль"
-              class="inputPrimary__input"
-            />
-          </div>
-          <a
-            href="#app"
-            class="form__forgot"
-            >Забыли пароль?</a
-          >
-        </div>
-        <CustomButton
-          type="primary"
-          label="Войти"
-        />
-      </form>
-
-      <div class="alternative login__alternative">
-        <div class="alternative__title">Или войдите с помощью</div>
-        <div class="auth-links">
-          <div class="auth-links__link">
-            <img
-              src="/google.svg"
-              alt="1"
-              class="auth-links__icon"
-            />
-          </div>
-          <div class="auth-links__link">
-            <img
-              src="/twitter.svg"
-              alt="2"
-              class="auth-links__icon"
-            />
-          </div>
-          <div class="auth-links__link">
-            <img
-              src="/facebook.svg"
-              alt="3"
-              class="auth-links__icon"
-            />
-          </div>
-        </div>
-      </div>
+      <LoginForm class="login__form" />
+      <AlternativeAuth class="login__alternative" />
       <div class="referencesRegister login__referencesRegister">
         Ещё нет аккаунта?
         <a
-          href="#app"
+          href="#"
           class="referencesRegister__link"
           >Зарегистрироваться</a
         >
@@ -126,6 +54,32 @@ import CustomButton from '@/shared/components/CustomButton.vue';
 
   &__backspace {
     margin-top: 20px;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+
+  &__title {
+    font-weight: 500;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    row-gap: 3px;
+    width: 100%;
+  }
+
+  &__forgot {
+    font-size: 12px;
+    text-decoration: none;
+    color: var(--color-blue);
   }
 }
 </style>

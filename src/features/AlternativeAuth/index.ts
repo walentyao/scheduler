@@ -1,0 +1,1 @@
+export { AlternativeAuth } from './components';

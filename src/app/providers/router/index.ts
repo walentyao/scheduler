@@ -6,6 +6,8 @@ import LoginPage from '@/pages/LoginPage/LoginPage.vue';
 import RegisterPage from '@/pages/RegisterPage/RegisterPage.vue';
 import DetailTaskPage from '@/pages/DetailTaskPage/DetailTaskPage.vue';
 import AddTaskPage from '@/pages/AddTaskPage/AddTaskPage.vue';
+import { useAuthStore } from '@/app/providers/stores/auth.store';
+import { storeToRefs } from 'pinia';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -46,6 +48,13 @@ const router = createRouter({
       component: RegisterPage,
     },
   ],
+});
+
+router.beforeEach((to, from) => {
+  const store = useAuthStore();
+  const { isAuth } = storeToRefs(store);
+
+  if (!isAuth.value && to.name !== 'login' && to.name !== 'register') return { name: 'login' };
 });
 
 export default router;

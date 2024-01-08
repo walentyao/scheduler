@@ -2,10 +2,14 @@
 import CustomButton from '@/shared/components/CustomButton.vue';
 import Calendar from 'primevue/calendar';
 import InputText from 'primevue/inputtext';
+import Textarea from 'primevue/textarea';
 import { ArrowLeftIcon } from '@heroicons/vue/24/solid';
 import { ref } from 'vue';
+import TabsButton from '@/shared/components/TabsButton.vue';
 
 const buttondisplay = ref();
+const value = ref('Off');
+const options = ref(['09', '06']);
 </script>
 
 <template>
@@ -41,10 +45,26 @@ const buttondisplay = ref();
       </div>
       <div class="main__title">
         <h3 class="blue-title">Заголовок</h3>
-        <InputText size="large" />
+        <InputText />
       </div>
 
-      <div class="main__category"></div>
+      <div class="main__category">
+        <h3 class="blue-title">Категория</h3>
+        <TabsButton
+          v-model="value"
+          :options="options"
+        />
+      </div>
+
+      <div class="main__description">
+        <h3 class="blue-title">Описание</h3>
+        <Textarea
+          v-model="value"
+          autoResize
+          rows="5"
+          cols="30"
+        />
+      </div>
     </main>
   </div>
 </template>
@@ -96,6 +116,18 @@ const buttondisplay = ref();
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+  }
+
+  &__category {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
   }
 }
 

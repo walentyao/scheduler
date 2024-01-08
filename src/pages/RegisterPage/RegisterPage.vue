@@ -120,12 +120,13 @@ import CustomButton from '@/shared/components/CustomButton.vue';
         </div>
       </div>
       <div class="referencesRegister registration__referencesRegister">
-        Ещё нет аккаунта?
+        Уже есть аккаунт?
         <a
           href="#app"
           class="referencesRegister__link"
-          >Зарегистрироваться</a
         >
+          Войти
+        </a>
       </div>
     </div>
   </div>
