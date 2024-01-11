@@ -1,7 +1,10 @@
 <script setup lang="ts">
+import { computed, ref, watch } from 'vue';
+
 interface IStyleProgress {
   backColor: string;
   lineColor: string;
+  percentagesColor?: string;
 }
 
 interface IProps {
@@ -10,6 +13,18 @@ interface IProps {
 }
 
 const props = defineProps<IProps>();
+
+const refToTextPercentages = ref<HTMLSpanElement>();
+
+const leftShiftFromLine = computed(() => {
+  return refToTextPercentages.value?.offsetWidth ?? 0;
+});
+
+watch(leftShiftFromLine, () => {
+  console.log(leftShiftFromLine);
+});
+
+// TODO изучить момент с тем, как пропсы обновляют компонент
 </script>
 
 <template>
@@ -18,11 +33,19 @@ const props = defineProps<IProps>();
     :style="{
       '--color-back': styleProgress.backColor,
       '--color-line': styleProgress.lineColor,
+      '--color-percentages': styleProgress.percentagesColor,
       '--percentages-line': percentages.toString() + '%',
     }"
   >
     <div class="progress-bar__line"></div>
-    <span class="progress-bar__percentages">{{ percentages }}%</span>
+    <div class="progress-bar__percentages">
+      <span
+        class="progress-bar__percentages_text"
+        ref="refToTextPercentages"
+        >{{ percentages }}
+        <small>%</small>
+      </span>
+    </div>
   </div>
 </template>
 
@@ -37,6 +60,8 @@ const props = defineProps<IProps>();
   height: 20px;
   border-radius: 10px;
 
+  overflow: hidden;
+
   position: relative;
 
   &__line {
@@ -49,12 +74,16 @@ const props = defineProps<IProps>();
   &__percentages {
     position: absolute;
     top: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: var(--color-percentages);
     width: 100%;
-    z-index: 100;
+    height: 100%;
+
+    &_text {
+      position: relative;
+      left: 13px;
+      font-size: 13px;
+      text-align: center;
+    }
   }
 }
 </style>

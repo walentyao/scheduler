@@ -32,6 +32,7 @@ const router = useRouter();
     <nav class="navigation__list">
       <NavigationLink
         v-for="link in navigationLinks"
+        :key="link.path"
         :path="link.path"
         :icon="link.icon"
         :is-active="link.path === router.currentRoute.value.path"

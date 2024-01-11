@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { XMarkIcon } from '@heroicons/vue/24/solid';
 import CustomButton from '@/shared/components/CustomButton.vue';
-import ProgressBar from '@/shared/components/ProgressBar.vue';
+import CustomProgressBar from '@/shared/components/CustomProgressBar.vue';
 import CustomList from '@/shared/components/CustomList.vue';
 </script>
 
@@ -78,7 +78,7 @@ import CustomList from '@/shared/components/CustomList.vue';
     <div class="progress">
       <div>Прогресс</div>
       <!--      TODO PROGRESS BAR-->
-      <ProgressBar
+      <CustomProgressBar
         :style-progress="{ backColor: '#c5c5c5', lineColor: '#006EE9' }"
         :percentages="70"
       />

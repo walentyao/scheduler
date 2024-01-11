@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import NavigationFooter from '@/widgets/NavigationFooter/components/NavigationFooter.vue';
 import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
+import { TaskList } from '@/widgets/TaskList';
 </script>
 
 <template>
@@ -20,48 +20,8 @@ import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
     </div>
     <div class="tasks">
       <h3>Приоритетные задачи</h3>
-      <div class="listTasks tasks__listTasks">
-        <div class="cardTask">
-          <div class="cardTask__date">
-            <span>10 дней</span>
-          </div>
-          <div class="cardTask__title">
-            <img
-              src="/iconui.svg"
-              class="cardTask__icon"
-              alt="ui"
-            />
-            <span class="cardTask__text">UI Design</span>
-          </div>
-          <div class="progress">
-            <div class="progress__title">Прогресс</div>
-            <div class="progressBar">
-              <div class="progressBar__line"></div>
-            </div>
-            <div class="progress__value">80%</div>
-          </div>
-        </div>
-
-        <div class="cardTask">
-          <div class="cardTask__date">
-            <span>10 дней</span>
-          </div>
-          <div class="cardTask__title">
-            <img
-              src="/iconui.svg"
-              class="cardTask__icon"
-              alt="ui"
-            />
-            <span class="cardTask__text">UI Design</span>
-          </div>
-          <div class="progress">
-            <div class="progressBar">
-              <div class="progressBar__line"></div>
-            </div>
-            <div class="progress__value">80%</div>
-          </div>
-        </div>
-      </div>
+      <!--      TODO-->
+      <TaskList class="tasks__listTasks" />
     </div>
     <div class="dailyTasks">
       <h3>Задания на день</h3>
@@ -120,78 +80,6 @@ import CheckboxSwitch from '@/shared/components/CheckboxSwitch.vue';
     margin-top: 20px;
   }
 }
-
-.listTasks {
-  display: flex;
-  flex-direction: row;
-  column-gap: 12px;
-}
-
-.cardTask {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  padding: 10px;
-  background: #006ee9;
-  border-radius: 20px;
-  color: white;
-
-  width: 130px;
-  height: 190px;
-
-  &__date {
-    display: flex;
-    justify-content: flex-end;
-    color: black;
-
-    span {
-      padding: 5px;
-      border-radius: 10px;
-
-      background: white;
-
-      font-size: 12px;
-    }
-  }
-
-  &__title {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    column-gap: 7px;
-  }
-}
-
-.progress {
-  display: flex;
-  flex-direction: column;
-  row-gap: 3px;
-  font-size: 12px;
-
-  &__title {
-    color: white;
-  }
-
-  &__value {
-    display: flex;
-    justify-content: flex-end;
-  }
-}
-
-.progressBar {
-  height: 4px;
-  border-radius: 4px;
-  background: #004797;
-
-  &__line {
-    height: 4px;
-    border-radius: 4px;
-    width: 80%;
-    background: white;
-  }
-}
-
 .dailyTasks {
   display: flex;
   flex-direction: column;
