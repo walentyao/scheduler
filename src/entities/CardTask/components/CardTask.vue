@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import CustomProgressBar from '@/shared/components/CustomProgressBar.vue';
-import { ref } from 'vue';
+import { type Component, ref } from 'vue';
 
-const proc = ref(0);
-// setInterval(() => {
-//   proc.value += 1;
-// }, 1000);
+interface IProps {
+  days: string;
+  image?: Component;
+  taskComplete: number;
+}
+
+const proc = ref(30);
 </script>
 
 <template>

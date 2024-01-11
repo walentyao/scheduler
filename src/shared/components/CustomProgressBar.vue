@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue';
+import { computed, onMounted, onUpdated, ref } from 'vue';
 
 interface IStyleProgress {
   backColor: string;
@@ -14,17 +14,27 @@ interface IProps {
 
 const props = defineProps<IProps>();
 
-const refToTextPercentages = ref<HTMLSpanElement>();
+const refToLine = ref<HTMLDivElement>(null);
+const refToPercentages = ref<HTMLSpanElement>(null);
+const leftShiftFromLine = ref<number>(0);
+const colorPercentages = ref<string>('');
 
-const leftShiftFromLine = computed(() => {
-  return refToTextPercentages.value?.offsetWidth ?? 0;
+const updateStateComponent = () => {
+  leftShiftFromLine.value = refToLine.value.offsetWidth + 5;
+  colorPercentages.value = 'white';
+
+  if (props.percentages > 50) {
+    leftShiftFromLine.value -= refToPercentages.value.offsetWidth + 10;
+    colorPercentages.value = props.styleProgress.percentagesColor;
+  }
+};
+
+onMounted(() => {
+  updateStateComponent();
 });
-
-watch(leftShiftFromLine, () => {
-  console.log(leftShiftFromLine);
+onUpdated(() => {
+  updateStateComponent();
 });
-
-// TODO изучить момент с тем, как пропсы обновляют компонент
 </script>
 
 <template>
@@ -33,17 +43,20 @@ watch(leftShiftFromLine, () => {
     :style="{
       '--color-back': styleProgress.backColor,
       '--color-line': styleProgress.lineColor,
-      '--color-percentages': styleProgress.percentagesColor,
+      '--color-percentages': colorPercentages,
       '--percentages-line': percentages.toString() + '%',
+      '--shift-percentages': leftShiftFromLine.toString() + 'px',
     }"
   >
-    <div class="progress-bar__line"></div>
+    <div
+      class="progress-bar__line"
+      ref="refToLine"
+    ></div>
     <div class="progress-bar__percentages">
       <span
         class="progress-bar__percentages_text"
-        ref="refToTextPercentages"
-        >{{ percentages }}
-        <small>%</small>
+        ref="refToPercentages"
+        >{{ percentages }}<small>%</small>
       </span>
     </div>
   </div>
@@ -55,6 +68,7 @@ watch(leftShiftFromLine, () => {
   --color-line: white;
   --percentages-line: 80%;
   --color-percentages: white;
+  --shift-percentages: 0;
 
   background: var(--color-back);
   height: 20px;
@@ -65,6 +79,7 @@ watch(leftShiftFromLine, () => {
   position: relative;
 
   &__line {
+    transition: width 0.5s linear;
     background: var(--color-line);
     width: var(--percentages-line);
     height: 100%;
@@ -80,7 +95,8 @@ watch(leftShiftFromLine, () => {
 
     &_text {
       position: relative;
-      left: 13px;
+      transition: left 0.5s linear;
+      left: var(--shift-percentages);
       font-size: 13px;
       text-align: center;
     }
