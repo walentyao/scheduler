@@ -4,7 +4,18 @@ import { CardTask } from '@/entities/CardTask';
 
 <template>
   <div class="list-tasks">
-    <CardTask />
+    <CardTask
+      :data="{ title: 'Ui Design', days: '10', image: { src: '/iconui.svg', alt: 'ui' } }"
+      :task-complete-progress="70"
+    />
+    <CardTask
+      :data="{ title: 'Ui Design', days: '10', image: { src: '/iconui.svg', alt: 'ui' } }"
+      :task-complete-progress="70"
+    />
+    <CardTask
+      :data="{ title: 'Ui Design', days: '10', image: { src: '/iconui.svg', alt: 'ui' } }"
+      :task-complete-progress="70"
+    />
   </div>
 </template>
 

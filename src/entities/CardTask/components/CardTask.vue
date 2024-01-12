@@ -1,32 +1,41 @@
 <script setup lang="ts">
 import CustomProgressBar from '@/shared/components/CustomProgressBar.vue';
-import { type Component, ref } from 'vue';
 
-interface IProps {
-  days: string;
-  image?: Component;
-  taskComplete: number;
+interface IImage {
+  src: string;
+  alt: string;
 }
 
-const proc = ref(30);
+interface IData {
+  days: string;
+  image?: IImage;
+  title: string;
+}
+
+interface IProps {
+  data: IData;
+  taskCompleteProgress: number;
+}
+
+defineProps<IProps>();
 </script>
 
 <template>
   <div class="card-task">
     <div class="card-task__date">
-      <span>10 дней</span>
+      <span>{{ data.days }} дней</span>
     </div>
     <div class="card-task__title">
       <img
-        src="/iconui.svg"
+        v-if="data.image"
+        :src="data.image.src"
         class="card-task__icon"
-        alt="ui"
+        :alt="data.image.alt"
       />
-      <span class="card-task__text">UI Design</span>
+      <span class="card-task__text">{{ data.title }}</span>
     </div>
-
     <CustomProgressBar
-      :percentages="proc"
+      :percentages="taskCompleteProgress"
       :style-progress="{
         backColor: 'rgba(197,197,197,0.4)',
         lineColor: '#ffffff',
